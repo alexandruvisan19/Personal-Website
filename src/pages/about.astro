@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import "../styles/global.css";
+
+const pageTitle = "About Me";
+
+const identity = {
+  firstName: "Alex",
+  country: "Romania",
+  occupation: "Frontend Engineer",
+  hobbies: ["travelling", "eating", "cats"],
+};
+const { firstName, country, occupation, hobbies } = identity;
+const [hobbyNumberOne, hobbyNumberTwo] = hobbies;
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const happy = true;
+const finished = true;
+const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <style define:vars={{ skillColor, fontWeight, textCase }} slot="style">
+    h1 {
+      color: purple;
+      font-size: 4rem;
+    }
+    .skill {
+      color: var(--skillColor);
+      font-weight: var(--fontWeight);
+      text-transform: var(--textCase);
+    }
+  </style>
+
+  <h1>About page</h1>
+  <p>Here are a few facts about me:</p>
+  <ul>
+    <li>My name is {firstName}.</li>
+    <li>I live in {country} and I work as a {occupation}.</li>
+    {
+      hobbies.length >= 2 && (
+        <li>
+          Two of my hobbies are: {hobbyNumberOne} and {hobbyNumberTwo}
+        </li>
+      )
+    }
+  </ul>
+  <p>My skills are:</p>
+  <ul>
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
+
+  {happy && <p>I am happy to be learning Astro!</p>}
+
+  {finished && <p>I finished this tutorial!</p>}
+
+  {
+    goal === 3 ? (
+      <p>My goal is to finish in 3 days.</p>
+    ) : (
+      <p>My goal is not 3 days.</p>
+    )
+  }
+</BaseLayout>

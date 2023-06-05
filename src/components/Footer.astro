@@ -1,0 +1,24 @@
+---
+import Social from "./Social.astro";
+
+const platform = ["github", "linkedin"];
+const [github, linkedin] = platform;
+const username = "alexandruvisan19";
+const links = ["https://www.linkedin.com/in/visan-alexandru/"];
+---
+
+<style>
+  footer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+</style>
+<footer>
+  <Social
+    username={username}
+    linkedin={linkedin}
+    github={github}
+    link={links[0]}
+  />
+</footer>

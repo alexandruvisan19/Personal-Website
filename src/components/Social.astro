@@ -1,0 +1,17 @@
+---
+const { username, github, linkedin, link } = Astro.props;
+---
+
+<style>
+  a {
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #4c1d95;
+    text-decoration: none;
+  }
+</style>
+<p>
+  Learn more about my projects on <a
+    href={`https://www.${github}.com/${username}`}>{github}</a
+  >, and more about me on <a href={link}>{linkedin}</a>.
+</p>
