@@ -2,17 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  background-color: #f1f5f9;
-  font-family: sans-serif;
+@layer utilities {
+  .w-ch {
+    width: 100ch;
+  }
 }
 
+html,
 body {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
-  line-height: 1.5;
+  font-family: "Quicksand", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
+  height: 100%;
 }
 
 * {
@@ -69,7 +69,6 @@ a:focus {
 
 @media screen and (min-width: 636px) {
   .nav-links {
-    margin-left: 5em;
     display: block;
     position: static;
     width: auto;
@@ -78,7 +77,7 @@ a:focus {
 
   .nav-links a {
     display: inline-block;
-    padding: 5px 20px;
+    padding: 5px 10px;
   }
 
   .hamburger {
@@ -86,11 +85,3 @@ a:focus {
   }
 }
 
-html.dark {
-  background-color: #0d0950;
-  color: #fff;
-}
-
-.dark .nav-links a {
-  color: #fff;
-}
