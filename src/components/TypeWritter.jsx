@@ -1,16 +1,11 @@
 import { h } from "preact";
 import { useState, useEffect } from "preact/hooks";
 
-export default function TypeWritter() {
+export default function TypeWritter({ sentences, options }) {
   const [currentText, setCurrentText] = useState("");
-  const [typingComplete, setTypingComplete] = useState(false);
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
-
-  const arrayText = [
-    "This is the text to display with typing effect.",
-    "I'm a frontend developer!",
-    "Testing a third phrase just in case!",
-  ];
+  const [visibleCaret, setVisibleCaret] = useState(false);
+  const { writeSpeed, deleteSpeed, pauseSpeed } = options;
 
   const startNextSentence = () => {
     setCurrentSentenceIndex((prevIndex) => prevIndex + 1);
@@ -21,16 +16,16 @@ export default function TypeWritter() {
     let index = 0;
 
     const additionInterval = setInterval(() => {
-      if (index < arrayText[currentSentenceIndex].length) {
+      if (index < sentences[currentSentenceIndex].length) {
         setCurrentText(
-          (prevText) => prevText + arrayText[currentSentenceIndex].charAt(index)
+          (prevText) => prevText + sentences[currentSentenceIndex].charAt(index)
         );
         index++;
       } else {
         clearInterval(additionInterval);
-        startCharacterSubtraction(index);
+        setTimeout(() => startCharacterSubtraction(index), pauseSpeed);
       }
-    }, 100);
+    }, writeSpeed);
   };
 
   const startCharacterSubtraction = (index) => {
@@ -42,20 +37,35 @@ export default function TypeWritter() {
         clearInterval(substractInterval);
         startNextSentence();
       }
-    }, 100);
+    }, deleteSpeed);
   };
 
   useEffect(() => {
-    if (currentSentenceIndex < arrayText.length) {
-      console.log(currentSentenceIndex);
-      startTypingEffect();
+    if (currentSentenceIndex < sentences.length) {
+      setTimeout(() => {
+        startTypingEffect();
+      }, pauseSpeed);
+    }
+
+    if (currentSentenceIndex === sentences.length) {
+      setCurrentSentenceIndex(0);
     }
   }, [currentSentenceIndex]);
 
+  useEffect(() => {
+    const caretInterval = setInterval(() => {
+      setVisibleCaret((prevCaret) => !prevCaret);
+    }, 500);
+
+    return () => {
+      clearInterval(caretInterval);
+    };
+  }, []);
+
   return (
-    <div>
+    <span className="text-blue-700 dark:text-sky-500 font-bold">
       {currentText}
-      <span>|</span>
-    </div>
+      {visibleCaret ? <span>|</span> : <span>&nbsp;</span>}
+    </span>
   );
 }

@@ -1,14 +1,14 @@
 ---
-import Hamburger from "./Hamburger.astro";
-import Navigation from "./Navigation.astro";
+import Hamburger from "./Hamburger";
+import Navigation from "./Navigation";
 import ThemeIcon from "./ThemeIcon.astro";
 ---
 
 <header class="p-4 border-b-2">
   <nav>
-    <Hamburger />
+    <Hamburger client:load />
     <div class="flex justify-between">
-      <Navigation />
+      <Navigation client:load />
       <ThemeIcon />
     </div>
   </nav>

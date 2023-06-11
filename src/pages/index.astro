@@ -1,12 +1,26 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Greeting from "../components/Greeting.jsx";
 import TypeWritter from "../components/TypeWritter";
 const pageTitle = "Home Page";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
-  <TypeWritter client:load />
-  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+  <main>
+    <div class="flex justify-center items-center text-2xl p-8">
+      <h2 class="inline">Hello 👋, I'm <u>Alexandru Visan</u> and I'm</h2>
+      <span>&nbsp;</span>
+      <TypeWritter
+        client:load
+        sentences={[
+          "from Romania",
+          "a frontend developer",
+          "a software engineer",
+          "a tech enthusiast",
+          "open for new ideas",
+        ]}
+        options={{ writeSpeed: 50, deleteSpeed: 50, pauseSpeed: 1000 }}
+      />
+      <span>.</span>
+    </div>
+  </main>
 </BaseLayout>
