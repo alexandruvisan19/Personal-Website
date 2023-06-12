@@ -1,3 +1,6 @@
-import { atom } from 'nanostores';
+import { map } from "nanostores";
 
-export const isCartOpen = atom(false);
+export const $header = map({
+  isHamburgerOpen: false,
+  isMobile: false,
+});

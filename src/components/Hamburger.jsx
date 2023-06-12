@@ -1,15 +1,34 @@
 import { h } from "preact";
 import { useEffect, useState } from "preact/hooks";
 import { useStore } from "@nanostores/preact";
-import { isCartOpen } from "../store/headerStore";
+import { $header } from "../store/headerStore";
 
 export default function Hamburger() {
   const [toggleHambuger, useToggleHambuger] = useState(false);
-  const $isCartOpen = useStore(isCartOpen);
+  const { isHamburgerOpen, isMobile } = useStore($header);
 
   function clickHandler() {
-    isCartOpen.set(!$isCartOpen);
+    $header.setKey("isHamburgerOpen", !isHamburgerOpen);
     useToggleHambuger((prevState) => !prevState);
+  }
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.matchMedia("(max-width: 768px)").matches;
+      $header.setKey("isMobile", isMobile);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  if (!isMobile) {
+    return null;
   }
 
   return (
@@ -18,7 +37,7 @@ export default function Hamburger() {
         <div
           onClick={clickHandler}
           id="hamburger"
-          className="inline-block cursor-pointer [&>*]:block [&>*]:w-8 [&>*]:h-1 [&>*]:rounded-md [&>*]:bg-blue-600 [&>*]:dark:bg-blue-500 [&>*]:focus:outline-none"
+          className="inline-block cursor-pointer [&>*]:block [&>*]:w-8 [&>*]:h-[4px] [&>*]:rounded-md [&>*]:bg-blue-600 [&>*]:dark:bg-blue-500 [&>*]:focus:outline-none"
         >
           <span className="mb-[5px]"></span>
           <span className="mb-[5px]"></span>
