@@ -4,18 +4,28 @@ import { useStore } from "@nanostores/preact";
 import { $header } from "../store/headerStore";
 
 export default function Hamburger() {
-  const [toggleHambuger, useToggleHambuger] = useState(false);
-  const { isHamburgerOpen, isMobile } = useStore($header);
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+  const { isMenuVisible } = useStore($header);
+  const [hasResized, setHasResized] = useState(false);
 
   function clickHandler() {
-    $header.setKey("isHamburgerOpen", !isHamburgerOpen);
-    useToggleHambuger((prevState) => !prevState);
+    $header.setKey("isMenuVisible", !isMenuVisible);
+    setIsHamburgerOpen((prevState) => !prevState);
   }
 
   useEffect(() => {
+    let resizeTimer;
+
     const handleResize = () => {
-      const isMobile = window.matchMedia("(max-width: 768px)").matches;
-      $header.setKey("isMobile", isMobile);
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+        if (!isMobile) {
+          setIsHamburgerOpen(false);
+          $header.setKey("isMenuVisible", false);
+        }
+      }, 100);
     };
 
     handleResize();
@@ -24,20 +34,17 @@ export default function Hamburger() {
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      clearTimeout(resizeTimer);
     };
   }, []);
 
-  if (!isMobile) {
-    return null;
-  }
-
   return (
     <>
-      {!toggleHambuger ? (
+      {!isHamburgerOpen ? (
         <div
           onClick={clickHandler}
           id="hamburger"
-          className="inline-block cursor-pointer [&>*]:block [&>*]:w-8 [&>*]:h-[4px] [&>*]:rounded-md [&>*]:bg-blue-600 [&>*]:dark:bg-blue-500 [&>*]:focus:outline-none"
+          className="md:hidden inline-block cursor-pointer [&>*]:block [&>*]:w-8 [&>*]:h-[4px] [&>*]:rounded-md [&>*]:bg-blue-600 [&>*]:dark:bg-blue-500 [&>*]:focus:outline-none"
         >
           <span className="mb-[5px]"></span>
           <span className="mb-[5px]"></span>
@@ -47,7 +54,7 @@ export default function Hamburger() {
         <button
           onClick={clickHandler}
           type="button"
-          class="text-blue-500 focus:outline-none"
+          class="md:hidden text-blue-500 focus:outline-none"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

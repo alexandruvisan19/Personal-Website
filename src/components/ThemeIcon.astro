@@ -32,7 +32,6 @@ if (cookie?.value) {
   .moon {
     fill: transparent;
   }
-
   :global(.dark) .sun {
     fill: transparent;
   }
@@ -42,36 +41,36 @@ if (cookie?.value) {
 </style>
 
 <script is:inline>
-  const theme = (() => {
-    if (typeof document !== "undefined") {
-      const cookie = document.cookie
-        .split("; ")
-        .find((row) => row.startsWith("theme="));
-      if (cookie) {
-        return cookie.split("=")[1];
-      }
+const theme = (() => {
+  if (typeof document !== "undefined") {
+    const cookie = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("theme="));
+    if (cookie) {
+      return cookie.split("=")[1];
     }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
-    return "light";
-  })();
-
-  if (theme === "light") {
-    document.documentElement.classList.remove("dark");
-  } else {
-    document.documentElement.classList.add("dark");
   }
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    return "dark";
+  }
+  return "light";
+})();
 
-  const handleToggleClick = () => {
-    const element = document.documentElement;
-    element.classList.toggle("dark");
+if (theme === "light") {
+  document.documentElement.classList.remove("dark");
+} else {
+  document.documentElement.classList.add("dark");
+}
 
-    const isDark = element.classList.contains("dark");
-    document.cookie = `theme=${isDark ? "dark" : "light"}; path=/`;
-  };
+const handleToggleClick = () => {
+  const element = document.documentElement;
+  element.classList.toggle("dark");
 
-  document
-    .getElementById("themeToggle")
-    ?.addEventListener("click", handleToggleClick);
+  const isDark = element.classList.contains("dark");
+  document.cookie = `theme=${isDark ? "dark" : "light"}; path=/`;
+};
+
+document
+  .getElementById("themeToggle")
+  ?.addEventListener("click", handleToggleClick);
 </script>

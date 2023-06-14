@@ -30,13 +30,7 @@ h1 {
   font-size: 1.1rem;
   font-weight: bold;
   text-transform: uppercase;
-}
-
-.nav-links a:hover,
-a:focus {
-  background-color: #ff9776;
-  border-radius: 10px;
-}
+} 
 
 .expanded {
   display: unset;

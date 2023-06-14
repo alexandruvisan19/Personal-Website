@@ -2,13 +2,16 @@
 import Hamburger from "./Hamburger";
 import Navigation from "./Navigation";
 import ThemeIcon from "./ThemeIcon.astro";
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname;
 ---
 
-<header class="p-4 border-b-2">
+<header class="p-2 mt-2 border-b-2">
   <nav>
     <Hamburger client:load />
     <div class="flex justify-between">
-      <Navigation client:load />
+      <Navigation client:load currentPath={currentPath} />
       <ThemeIcon />
     </div>
   </nav>
