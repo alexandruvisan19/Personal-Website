@@ -22,6 +22,8 @@ export default function Navigation({ currentPath }) {
     },
   ];
 
+  console.log(isMenuVisible);
+
   return (
     <div
       id="nav-links"
