@@ -19,25 +19,9 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const happy = true;
 const finished = true;
 const goal = 3;
-
-const skillColor = "navy";
-const fontWeight = "bold";
-const textCase = "uppercase";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <style define:vars={{ skillColor, fontWeight, textCase }} slot="style">
-    h1 {
-      color: purple;
-      font-size: 4rem;
-    }
-    .skill {
-      color: var(--skillColor);
-      font-weight: var(--fontWeight);
-      text-transform: var(--textCase);
-    }
-  </style>
-
   <h1>About page</h1>
   <p>Here are a few facts about me:</p>
   <ul>
