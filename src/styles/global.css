@@ -7,7 +7,6 @@
     width: 100ch;
   }
 }
-
 html,
 body {
   height: 100%;
@@ -30,7 +29,7 @@ h1 {
   font-size: 1.1rem;
   font-weight: bold;
   text-transform: uppercase;
-} 
+}
 
 .expanded {
   display: unset;

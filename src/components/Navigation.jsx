@@ -27,12 +27,14 @@ export default function Navigation({ currentPath }) {
       id="nav-links"
       class={`${
         !isMenuVisible ? "hidden" : ""
-      } md:block w-full top-20 left-12 m-0 [&>a]:px-4`}
+      } sm:block w-full top-20 left-12 m-0 text-lg [&>a]:px-4`}
     >
       {pages.map((page) => (
         <a
           className={`${
-            currentPath === page.path ? "bg-blue-300 rounded" : ""
+            currentPath === page.path
+              ? "underline underline-offset-4 decoration-wavy"
+              : ""
           }`}
           href={page.path}
         >

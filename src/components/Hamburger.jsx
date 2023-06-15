@@ -6,7 +6,6 @@ import { $header } from "../store/headerStore";
 export default function Hamburger() {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const { isMenuVisible } = useStore($header);
-  const [hasResized, setHasResized] = useState(false);
 
   function clickHandler() {
     $header.setKey("isMenuVisible", !isMenuVisible);
@@ -19,7 +18,7 @@ export default function Hamburger() {
     const handleResize = () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
-        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        const isMobile = window.matchMedia("(max-width: 640px)").matches;
 
         if (!isMobile) {
           setIsHamburgerOpen(false);

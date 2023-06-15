@@ -63,9 +63,12 @@ export default function TypeWritter({ sentences, options }) {
   }, []);
 
   return (
-    <span className="text-blue-700 dark:text-sky-500 font-bold">
-      {currentText}
-      {visibleCaret ? <span>|</span> : <span>&nbsp;</span>}
-    </span>
+    <>
+      <span className="text-blue-700 dark:text-sky-500 font-bold">
+        {currentText}
+        {visibleCaret ? <span>|</span> : <span>&nbsp;</span>}
+      </span>
+      <span>.</span>
+    </>
   );
 }
