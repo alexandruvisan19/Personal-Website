@@ -22,7 +22,8 @@ export default function Navigation({ currentPath }) {
     },
   ];
 
-  console.log(isMenuVisible);
+  console.log(currentPath);
+  console.log(pages);
 
   return (
     <div
