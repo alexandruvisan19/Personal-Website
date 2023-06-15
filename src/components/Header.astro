@@ -7,12 +7,10 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname;
 ---
 
-<header class="p-2 mt-2 border-b-2">
-  <nav>
+<header class="p-2 border-b-2">
+  <nav class="flex justify-between items-center">
     <Hamburger client:load />
-    <div class="flex justify-between">
-      <Navigation client:load currentPath={currentPath} />
-      <ThemeIcon />
-    </div>
+    <Navigation client:load currentPath={currentPath} />
+    <ThemeIcon />
   </nav>
 </header>
