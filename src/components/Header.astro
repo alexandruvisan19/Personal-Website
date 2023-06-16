@@ -4,7 +4,7 @@ import Navigation from "./Navigation";
 import ThemeIcon from "./ThemeIcon.astro";
 
 let currentPath = new URL(Astro.url).pathname;
-if (currentPath.charAt(currentPath.length - 1) === '/') {
+if (currentPath.charAt(currentPath.length - 1) === '/' && currentPath.length !== 1) {
   currentPath = currentPath.slice(0, -1)
 }
 ---
