@@ -2,6 +2,7 @@ import { useStore } from "@nanostores/preact";
 import { $header } from "../store/headerStore";
 
 export default function Navigation({ currentPath }) {
+  console.log(currentPath);
   const { isMenuVisible } = useStore($header);
   const pages = [
     {
