@@ -3,8 +3,7 @@ import Hamburger from "./Hamburger";
 import Navigation from "./Navigation";
 import ThemeIcon from "./ThemeIcon.astro";
 
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname;
+const currentPath = Astro.url.pathname;
 ---
 
 <header class="p-2 border-b-2">
