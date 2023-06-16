@@ -22,9 +22,6 @@ export default function Navigation({ currentPath }) {
     },
   ];
 
-  console.log(currentPath);
-  console.log(pages);
-
   return (
     <div
       id="nav-links"

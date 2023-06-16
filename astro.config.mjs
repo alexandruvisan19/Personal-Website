@@ -9,4 +9,5 @@ export default defineConfig({
   integrations: [preact(), tailwind()],
   output: "hybrid",
   adapter: netlify(),
+  trailingSlash: "never",
 });
