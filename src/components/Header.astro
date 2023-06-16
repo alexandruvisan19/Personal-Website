@@ -3,7 +3,10 @@ import Hamburger from "./Hamburger";
 import Navigation from "./Navigation";
 import ThemeIcon from "./ThemeIcon.astro";
 
-const currentPath = new URL(Astro.url).pathname;
+let currentPath = new URL(Astro.url).pathname;
+if (currentPath.charAt(currentPath.length - 1) === '/') {
+  currentPath = currentPath.slice(0, -1)
+}
 ---
 
 <header class="p-2 border-b-2">
