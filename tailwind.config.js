@@ -4,10 +4,10 @@ export default {
   theme: {
     extend: {
       animation: {
-        wiggle: "wiggle 2s ease-in-out infinite",
+        wave: "wave 2.5s ease-in-out infinite",
       },
       keyframes: {
-        wiggle: {
+        wave: {
           "0%": { transform: "rotate(0.0deg)" },
           "10%": { transform: "rotate(14.0deg)" },
           "20%": { transform: "rotate(-8.0deg)" },
