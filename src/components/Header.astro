@@ -3,12 +3,7 @@ import Hamburger from "./Hamburger";
 import Navigation from "./Navigation";
 import ThemeIcon from "./ThemeIcon.astro";
 
-const currentPath = new URL(Astro.url);
-console.log(currentPath);
-const test = JSON.stringify({
-  href: currentPath.href,
-  pathname: currentPath.pathname,
-});
+const currentPath = new URL(Astro.url).pathname;
 ---
 
 <header class="p-2 border-b-2">
@@ -17,5 +12,4 @@ const test = JSON.stringify({
     <Navigation client:load currentPath={currentPath} />
     <ThemeIcon />
   </nav>
-  <p>{test}</p>
 </header>
