@@ -20,24 +20,21 @@ export default function Navigation({ currentPath }) {
   ];
 
   return (
-    <div
-      id='nav-links'
-      class={`${
-        !isMenuVisible ? 'hidden' : ''
-      } sm:block w-full top-20 left-12 m-0 text-lg [&>a]:px-4`}
-    >
+    <ul class={`${!isMenuVisible ? 'hidden' : ''} sm:flex justify-around`}>
       {pages.map(page => (
-        <a
-          className={`${
-            currentPath === page.path
-              ? 'underline underline-offset-4 decoration-wavy'
-              : ''
-          }`}
-          href={page.path}
-        >
-          {page.name}
-        </a>
+        <li class='pr-4 pl-4'>
+          <a
+            className={`${
+              currentPath === page.path
+                ? 'underline underline-offset-4 decoration-wavy'
+                : ''
+            }`}
+            href={page.path}
+          >
+            {page.name}
+          </a>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }

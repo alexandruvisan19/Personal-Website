@@ -1,20 +1,20 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-import "../styles/global.css";
+import '../styles/global.css';
 
-const pageTitle = "About Me";
+const pageTitle = 'About Me';
 
 const identity = {
-  firstName: "Alex",
-  country: "Romania",
-  occupation: "Frontend Engineer",
-  hobbies: ["travelling", "eating", "cats"],
+  firstName: 'Alex',
+  country: 'Romania',
+  occupation: 'Frontend Engineer',
+  hobbies: ['travelling', 'eating', 'cats'],
 };
 const { firstName, country, occupation, hobbies } = identity;
 const [hobbyNumberOne, hobbyNumberTwo] = hobbies;
 
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Astro', 'Writing Docs'];
 
 const happy = true;
 const finished = true;
@@ -22,33 +22,35 @@ const goal = 3;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h1>About page</h1>
-  <p>Here are a few facts about me:</p>
-  <ul>
-    <li>My name is {firstName}.</li>
-    <li>I live in {country} and I work as a {occupation}.</li>
+  <div>
+    <h1>About page</h1>
+    <p>Here are a few facts about me:</p>
+    <ul>
+      <li>My name is {firstName}.</li>
+      <li>I live in {country} and I work as a {occupation}.</li>
+      {
+        hobbies.length >= 2 && (
+          <li>
+            Two of my hobbies are: {hobbyNumberOne} and {hobbyNumberTwo}
+          </li>
+        )
+      }
+    </ul>
+    <p>My skills are:</p>
+    <ul>
+      {skills.map(skill => <li class='skill'>{skill}</li>)}
+    </ul>
+
+    {happy && <p>I am happy to be learning Astro!</p>}
+
+    {finished && <p>I finished this tutorial!</p>}
+
     {
-      hobbies.length >= 2 && (
-        <li>
-          Two of my hobbies are: {hobbyNumberOne} and {hobbyNumberTwo}
-        </li>
+      goal === 3 ? (
+        <p>My goal is to finish in 3 days.</p>
+      ) : (
+        <p>My goal is not 3 days.</p>
       )
     }
-  </ul>
-  <p>My skills are:</p>
-  <ul>
-    {skills.map((skill) => <li class="skill">{skill}</li>)}
-  </ul>
-
-  {happy && <p>I am happy to be learning Astro!</p>}
-
-  {finished && <p>I finished this tutorial!</p>}
-
-  {
-    goal === 3 ? (
-      <p>My goal is to finish in 3 days.</p>
-    ) : (
-      <p>My goal is not 3 days.</p>
-    )
-  }
+  </div>
 </BaseLayout>

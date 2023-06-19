@@ -1,6 +1,6 @@
 export const person = {
   name: {
-    firstname: "Alexandru",
+    firstname: "Alex",
     surname: "Cristian",
     lastname: "Visan",
   },

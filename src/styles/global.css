@@ -1,15 +1,18 @@
+/* @import url('src/fonts/CarterOne-Regular.ttf'); */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Carter One';
+  src: url('../fonts/CarterOne-Regular.ttf') format('truetype');
+}
 
 @layer utilities {
   .w-ch {
     width: 100ch;
   }
-}
-html,
-body {
-  height: 100%;
 }
 
 * {

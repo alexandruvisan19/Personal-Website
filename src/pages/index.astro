@@ -2,16 +2,21 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TypeWritter from '../components/TypeWritter';
 const pageTitle = 'Home Page';
+
+import { person } from '../data';
+const { name } = person;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <main>
-    <div class='flex justify-center items-center text-2xl p-8'>
-      <h2 class='inline'>
-        Hello <span
-          class='relative bottom-1 right-1 text-3xl inline-block animate-wave origin-[70%_70%]'
-          >👋</span
-        >, I'm <i>Alexandru Visan</i> and I'm
+  <div
+    class='hero-content text-center md:w-max absolute top-1/2 right-1/2 translate-x-[50%] translate-y-[-50%]'
+  >
+    <h2 class='inline text-4xl font-bold'>
+      Hello <span
+        class='relative bottom-1 right-1 md:text-4xl text-2xl inline-block animate-wave origin-[70%_70%]'
+        >👋</span
+      >, I'm <i>{name.firstname} {name.lastname}</i> and I'm
+      <span class='text-blue-400'>
         <TypeWritter
           client:load
           sentences={[
@@ -24,13 +29,13 @@ const pageTitle = 'Home Page';
           options={{
             writeSpeed: 50,
             deleteSpeed: 50,
-            pauseSpeed: 1000,
+            pauseSpeed: 1300,
             caretSpeed: 500,
             isInfinite: false,
             startText: false,
           }}
-        />
-      </h2>
-    </div>
-  </main>
+        /></span
+      >
+    </h2>
+  </div>
 </BaseLayout>

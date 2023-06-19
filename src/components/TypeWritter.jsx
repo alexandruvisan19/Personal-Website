@@ -90,8 +90,10 @@ export default function TypeWritter({ sentences, options }) {
 
   return (
     <>
-      {hasStartText ? sentences[0] : currentText}
-      {visibleCaret ? <span>|</span> : <span>&nbsp;</span>}
+      <p>
+        {hasStartText ? sentences[0] : currentText}
+        {visibleCaret ? <span>|</span> : <span>&nbsp;</span>}
+      </p>
     </>
   );
 }
