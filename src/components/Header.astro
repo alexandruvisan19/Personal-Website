@@ -2,7 +2,6 @@
 import Hamburger from './Hamburger';
 import Navigation from './Navigation';
 import ThemeIcon from './ThemeIcon.astro';
-import TypeWritter from './TypeWritter';
 
 let currentPath = new URL(Astro.url).pathname;
 if (
@@ -16,27 +15,8 @@ if (
 <header class='md:pt-4 pt-4 pr-2 pl-2'>
   <nav class='flex justify-between items-center'>
     <Hamburger client:load />
-    <a
-      href='/'
-      class='font-carter text-3xl text-gray-700 dark:text-gray-200 hover:text-blue-700'
-    >
-      <TypeWritter
-        client:load
-        sentences={['Alex Visan.', 'AV.']}
-        options={{
-          writeSpeed: 80,
-          deleteSpeed: 150,
-          pauseSpeed: 1000,
-          caretSpeed: 500,
-          isInfinite: true,
-          startText: true,
-        }}
-      />
-    </a>
-    <div class='flex items-center'>
-      <Navigation client:load currentPath={currentPath} />
-      <ThemeIcon />
-    </div>
+    <Navigation client:load currentPath={currentPath} />
+    <ThemeIcon />
   </nav>
   <div class='divider'></div>
 </header>

@@ -2,9 +2,9 @@ export const person = {
   name: {
     firstname: "Alex",
     surname: "Cristian",
-    lastname: "Visan",
+    lastname: "Vișan",
   },
-  initials: "AV",
+  initials: "AV.",
   age: new Date().getFullYear() - 1993,
 };
 

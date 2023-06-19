@@ -3,6 +3,9 @@ import { person, social } from '../data';
 import Logo from '/Logo.png';
 
 const { linkedin, github } = social;
+const {
+  name: { firstname, surname, lastname },
+} = person;
 ---
 
 <div class='divider'></div>
@@ -10,7 +13,11 @@ const { linkedin, github } = social;
   <div class='items-center grid-flow-col'>
     <img class='w-10 rounded' src={Logo} alt='logo' />
 
-    <p>Copyright © 2023 - All right reserved</p>
+    <p>
+      Copyright © {new Date().getFullYear()} - {
+        `${firstname} ${surname} ${lastname}`
+      }
+    </p>
   </div>
   <div class='grid-flow-col gap-4 md:place-self-center md:justify-self-end'>
     <a href={linkedin.link}
