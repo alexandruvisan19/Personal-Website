@@ -1,17 +1,26 @@
 ---
-import Social from "./Social.astro";
+import { person, social } from '../data'
 
-const platform = ["github", "linkedin"];
-const [github, linkedin] = platform;
-const username = "alexandruvisan19";
-const links = ["https://www.linkedin.com/in/visan-alexandru/"];
+const { firstname, surname, lastname } = person.name
 ---
 
-<footer class="shrink-0 text-center border-t-2 p-1">
-  <Social
-    username={username}
-    linkedin={linkedin}
-    github={github}
-    link={links[0]}
-  />
+<footer class='shrink-0 text-center border-t-2 p-1'>
+  <p>
+    Website built using <a
+      class='italic text-sky-400 underline'
+      target='_blank'
+      href='https://astro.build/'>Astro</a
+    >, <a
+      class='italic text-sky-400 underline'
+      target='_blank'
+      href='https://preactjs.com/'>Preact</a
+    > and
+    <a
+      class='italic text-sky-400 underline'
+      target='_blank'
+      href='https://tailwindcss.com/'>Tailwind</a
+    > by <a href={social.linkedin.link} class='italic underline text-sky-400'
+      >{`${firstname} ${surname} ${lastname}`}</a
+    >.
+  </p>
 </footer>

@@ -1,41 +1,37 @@
-import { useStore } from "@nanostores/preact";
-import { $header } from "../store/headerStore";
+import { useStore } from '@nanostores/preact';
+import { $header } from '../store/headerStore';
+import TypeWritter from './TypeWritter';
 
 export default function Navigation({ currentPath }) {
-  console.log(currentPath);
   const { isMenuVisible } = useStore($header);
   const pages = [
     {
-      name: "Home",
-      path: "/",
+      name: 'About',
+      path: '/about',
     },
     {
-      name: "About",
-      path: "/about",
+      name: 'Blog',
+      path: '/blog',
     },
     {
-      name: "Blog",
-      path: "/blog",
-    },
-    {
-      name: "Tags",
-      path: "/tags",
+      name: 'Tags',
+      path: '/tags',
     },
   ];
 
   return (
     <div
-      id="nav-links"
+      id='nav-links'
       class={`${
-        !isMenuVisible ? "hidden" : ""
+        !isMenuVisible ? 'hidden' : ''
       } sm:block w-full top-20 left-12 m-0 text-lg [&>a]:px-4`}
     >
-      {pages.map((page) => (
+      {pages.map(page => (
         <a
           className={`${
             currentPath === page.path
-              ? "underline underline-offset-4 decoration-wavy"
-              : ""
+              ? 'underline underline-offset-4 decoration-wavy'
+              : ''
           }`}
           href={page.path}
         >

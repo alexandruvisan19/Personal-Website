@@ -1,27 +1,34 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import TypeWritter from "../components/TypeWritter";
-const pageTitle = "Home Page";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TypeWritter from '../components/TypeWritter';
+const pageTitle = 'Home Page';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <main>
-    <div class="flex justify-center items-center text-2xl p-8">
-      <h2 class="inline">
+    <div class='flex justify-center items-center text-2xl p-8'>
+      <h2 class='inline'>
         Hello <span
-          class="relative bottom-1 right-1 text-3xl inline-block animate-wave origin-[70%_70%]"
+          class='relative bottom-1 right-1 text-3xl inline-block animate-wave origin-[70%_70%]'
           >👋</span
         >, I'm <i>Alexandru Visan</i> and I'm
         <TypeWritter
           client:load
           sentences={[
-            "from Romania",
-            "a frontend developer",
-            "a software engineer",
-            "a tech enthusiast",
-            "open for new ideas",
+            'from Romania.',
+            'a frontend developer.',
+            'a software engineer.',
+            'a tech enthusiast.',
+            'open for new ideas.',
           ]}
-          options={{ writeSpeed: 50, deleteSpeed: 50, pauseSpeed: 1000 }}
+          options={{
+            writeSpeed: 50,
+            deleteSpeed: 50,
+            pauseSpeed: 1000,
+            caretSpeed: 500,
+            isInfinite: false,
+            startText: false,
+          }}
         />
       </h2>
     </div>

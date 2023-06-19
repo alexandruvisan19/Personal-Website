@@ -1,37 +1,55 @@
-import { h } from "preact";
-import { useState, useEffect } from "preact/hooks";
+import { h } from 'preact';
+import { useState, useEffect } from 'preact/hooks';
 
 export default function TypeWritter({ sentences, options }) {
-  const [currentText, setCurrentText] = useState("");
+  const [currentText, setCurrentText] = useState('');
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
   const [visibleCaret, setVisibleCaret] = useState(false);
-  const { writeSpeed, deleteSpeed, pauseSpeed } = options;
+  const {
+    writeSpeed,
+    deleteSpeed,
+    pauseSpeed,
+    caretSpeed,
+    isInfinite,
+    startText,
+  } = options;
+  const [hasStartText, setHasStartText] = useState(startText);
 
   const startNextSentence = () => {
-    setCurrentSentenceIndex((prevIndex) => prevIndex + 1);
-    setCurrentText("");
+    setCurrentSentenceIndex(prevIndex => prevIndex + 1);
+    setCurrentText('');
   };
 
   const startTypingEffect = () => {
     let index = 0;
 
+    if (hasStartText) {
+      index = sentences[currentSentenceIndex].length - 1;
+      setCurrentText(sentences[0]);
+    }
+
     const additionInterval = setInterval(() => {
-      if (index < sentences[currentSentenceIndex].length) {
+      if (index < sentences[currentSentenceIndex].length && !hasStartText) {
         setCurrentText(
-          (prevText) => prevText + sentences[currentSentenceIndex].charAt(index)
+          prevText => prevText + sentences[currentSentenceIndex].charAt(index),
         );
         index++;
       } else {
         clearInterval(additionInterval);
         setTimeout(() => startCharacterSubtraction(index), pauseSpeed);
+        setHasStartText(false);
       }
     }, writeSpeed);
   };
 
-  const startCharacterSubtraction = (index) => {
+  const startCharacterSubtraction = index => {
+    if (currentSentenceIndex === sentences.length - 1 && isInfinite) {
+      return;
+    }
+
     const substractInterval = setInterval(() => {
       if (index >= 0) {
-        setCurrentText((prevText) => prevText.slice(0, index));
+        setCurrentText(prevText => prevText.slice(0, index));
         index--;
       } else {
         clearInterval(substractInterval);
@@ -42,9 +60,12 @@ export default function TypeWritter({ sentences, options }) {
 
   useEffect(() => {
     if (currentSentenceIndex < sentences.length) {
-      setTimeout(() => {
-        startTypingEffect();
-      }, pauseSpeed);
+      setTimeout(
+        () => {
+          startTypingEffect();
+        },
+        hasStartText ? 0 : pauseSpeed,
+      );
     }
 
     if (currentSentenceIndex === sentences.length) {
@@ -54,21 +75,23 @@ export default function TypeWritter({ sentences, options }) {
 
   useEffect(() => {
     const caretInterval = setInterval(() => {
-      setVisibleCaret((prevCaret) => !prevCaret);
-    }, 500);
+      if (currentSentenceIndex === sentences.length - 1 && isInfinite) {
+        setVisibleCaret(false);
+        return;
+      }
+
+      setVisibleCaret(prevCaret => !prevCaret);
+    }, caretSpeed);
 
     return () => {
       clearInterval(caretInterval);
     };
-  }, []);
+  }, [currentSentenceIndex]);
 
   return (
     <>
-      <span className="text-blue-700 dark:text-sky-500 font-bold">
-        {currentText}
-        {visibleCaret ? <span>|</span> : <span>&nbsp;</span>}
-      </span>
-      <span>.</span>
+      {hasStartText ? sentences[0] : currentText}
+      {visibleCaret ? <span>|</span> : <span>&nbsp;</span>}
     </>
   );
 }
