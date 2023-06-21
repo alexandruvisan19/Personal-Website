@@ -95,7 +95,7 @@ export default function TypeWritter({ sentences, options }) {
         {visibleCaret ? (
           <span>|</span>
         ) : (
-          <span className='inline-block w-0 ml-3'>&nbsp;</span>
+          <span className='inline-block w-0 sm:ml-3 ml-0'>&nbsp;</span>
         )}
       </p>
     </>
