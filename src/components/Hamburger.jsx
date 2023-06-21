@@ -57,7 +57,7 @@ export default function Hamburger() {
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            class='h-[22.4px] w-8'
+            class='h-[32px] w-8'
             fill='none'
             viewBox='0 0 24 24'
             stroke='currentColor'

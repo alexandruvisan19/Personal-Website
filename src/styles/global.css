@@ -15,6 +15,7 @@
   src: url('/fonts/CarterOne-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -22,13 +23,15 @@
   src: url("/fonts/Montserrat-VariableFont_wght.ttf") format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "Montserrat-Italic";
+  font-family: "Montserrat Italic";
   src: url("/fonts/Montserrat-Italic-VariableFont_wght.ttf") format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 * {

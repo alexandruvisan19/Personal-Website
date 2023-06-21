@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "tailwind": "tailwindcss -i ./src/styles/global.css -o ./dist/output --watch"
   },
   "dependencies": {
     "@astrojs/netlify": "^2.3.0",

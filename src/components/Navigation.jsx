@@ -37,7 +37,7 @@ export default function Navigation({ currentPath }) {
     >
       <a
         href='/'
-        class='font-carter sm:text-3xl text-5xl text-gray-700 dark:text-gray-200 hover:text-blue-700'
+        class='font-carter sm:text-3xl text-5xl text-black dark:text-white hover:text-blue-700'
       >
         <TypeWritter
           sentences={[`${firstname} ${lastname}.`, initials]}
