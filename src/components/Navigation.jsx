@@ -25,15 +25,19 @@ export default function Navigation({ currentPath }) {
     },
   ];
 
+  const mobileMenuStylesParent =
+    'flex absolute left-0 right-0 top-0 bottom-0 flex-col justify-center';
+  const mobileMenuStylesChildren = 'flex-col justify-center';
+
   return (
     <div
-      class={`sm:flex items-center justify-between w-full ${
-        !isMenuVisible ? 'hidden' : 'flex'
+      class={`xl:pr-0 xl:pl-0 pr-4 pl-4 sm:flex items-center sm:justify-between w-full ${
+        !isMenuVisible ? 'hidden' : mobileMenuStylesParent
       }`}
     >
       <a
         href='/'
-        class='font-carter text-3xl text-gray-700 dark:text-gray-200 hover:text-blue-700'
+        class='font-carter sm:text-3xl text-5xl text-gray-700 dark:text-gray-200 hover:text-blue-700'
       >
         <TypeWritter
           sentences={[`${firstname} ${lastname}.`, initials]}
@@ -47,15 +51,20 @@ export default function Navigation({ currentPath }) {
           }}
         />
       </a>
-      <ul class='flex'>
+
+      <ul
+        class={`flex text-center ${
+          !isMenuVisible ? '' : mobileMenuStylesChildren
+        }`}
+      >
         {pages.map(page => (
-          <li class='pr-4 pl-4'>
+          <li class='sm:pt-0 pt-8 pr-4 pl-4'>
             <a
               className={`${
                 currentPath === page.path
                   ? 'underline underline-offset-4 decoration-wavy'
                   : ''
-              } text-xl`}
+              } sm:text-xl text-2xl`}
               href={page.path}
             >
               {page.name}

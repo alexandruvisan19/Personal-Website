@@ -92,7 +92,11 @@ export default function TypeWritter({ sentences, options }) {
     <>
       <p>
         {hasStartText ? sentences[0] : currentText}
-        {visibleCaret ? <span>|</span> : <span>&nbsp;</span>}
+        {visibleCaret ? (
+          <span>|</span>
+        ) : (
+          <span className='inline-block w-0'>&nbsp;</span>
+        )}
       </p>
     </>
   );
