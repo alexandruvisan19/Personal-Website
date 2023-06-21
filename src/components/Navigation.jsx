@@ -55,7 +55,7 @@ export default function Navigation({ currentPath }) {
                 currentPath === page.path
                   ? 'underline underline-offset-4 decoration-wavy'
                   : ''
-              }`}
+              } text-xl`}
               href={page.path}
             >
               {page.name}

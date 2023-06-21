@@ -1,15 +1,15 @@
-import { h } from "preact";
-import { useEffect, useState } from "preact/hooks";
-import { useStore } from "@nanostores/preact";
-import { $header } from "../store/headerStore";
+import { h } from 'preact';
+import { useEffect, useState } from 'preact/hooks';
+import { useStore } from '@nanostores/preact';
+import { $header } from '../store/headerStore';
 
 export default function Hamburger() {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const { isMenuVisible } = useStore($header);
 
   function clickHandler() {
-    $header.setKey("isMenuVisible", !isMenuVisible);
-    setIsHamburgerOpen((prevState) => !prevState);
+    $header.setKey('isMenuVisible', !isMenuVisible);
+    setIsHamburgerOpen(prevState => !prevState);
   }
 
   useEffect(() => {
@@ -18,21 +18,21 @@ export default function Hamburger() {
     const handleResize = () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
-        const isMobile = window.matchMedia("(max-width: 640px)").matches;
+        const isMobile = window.matchMedia('(max-width: 640px)').matches;
 
         if (!isMobile) {
           setIsHamburgerOpen(false);
-          $header.setKey("isMenuVisible", false);
+          $header.setKey('isMenuVisible', false);
         }
       }, 100);
     };
 
     handleResize();
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
       clearTimeout(resizeTimer);
     };
   }, []);
@@ -42,31 +42,31 @@ export default function Hamburger() {
       {!isHamburgerOpen ? (
         <div
           onClick={clickHandler}
-          id="hamburger"
-          className="sm:hidden inline-block cursor-pointer [&>*]:block [&>*]:w-8 [&>*]:h-[4px] [&>*]:rounded-md [&>*]:bg-blue-600 [&>*]:dark:bg-blue-500 [&>*]:focus:outline-none"
+          id='hamburger'
+          className='sm:hidden inline-block cursor-pointer [&>*]:block [&>*]:w-8 [&>*]:h-[4px] [&>*]:rounded-md [&>*]:bg-black [&>*]:dark:bg-white [&>*]:focus:outline-none'
         >
-          <span className="mb-[5px]"></span>
-          <span className="mb-[5px]"></span>
+          <span className='mb-[5px]'></span>
+          <span className='mb-[5px]'></span>
           <span></span>
         </div>
       ) : (
         <button
           onClick={clickHandler}
-          type="button"
-          class="md:hidden text-blue-500 focus:outline-none"
+          type='button'
+          class='md:hidden dark:text-white focus:outline-none'
         >
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-[22.4px] w-8"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+            xmlns='http://www.w3.org/2000/svg'
+            class='h-[22.4px] w-8'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="3"
-              d="M6 18L18 6M6 6l12 12"
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='3'
+              d='M6 18L18 6M6 6l12 12'
             ></path>
           </svg>
         </button>

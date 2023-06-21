@@ -1,5 +1,6 @@
 ---
 import Hamburger from './Hamburger';
+import HeaderContainer from './HeaderContainer';
 import Navigation from './Navigation';
 import ThemeIcon from './ThemeIcon.astro';
 
@@ -12,11 +13,13 @@ if (
 }
 ---
 
-<header class='md:pt-4 pt-4 pr-2 pl-2'>
-  <nav class='flex justify-between items-center'>
-    <Hamburger client:load />
+<HeaderContainer client:load>
+  <nav class='sm:flex sm:flex-row-reverse items-center'>
+    <div class='flex justify-between items-center pr-4 pl-4'>
+      <Hamburger client:load />
+      <ThemeIcon />
+    </div>
     <Navigation client:load currentPath={currentPath} />
-    <ThemeIcon />
   </nav>
-  <div class='divider'></div>
-</header>
+</HeaderContainer>
+<div class='divider'></div>

@@ -4,15 +4,31 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Carter One';
-  src: url('../fonts/CarterOne-Regular.ttf') format('truetype');
-}
-
 @layer utilities {
   .w-ch {
     width: 100ch;
   }
+}
+
+@font-face {
+  font-family: 'Carter One';
+  src: url('/fonts/CarterOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-VariableFont_wght.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat-Italic";
+  src: url("/fonts/Montserrat-Italic-VariableFont_wght.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 * {

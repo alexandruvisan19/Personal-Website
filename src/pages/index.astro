@@ -9,14 +9,14 @@ const { name } = person;
 
 <BaseLayout pageTitle={pageTitle}>
   <div
-    class='hero-content text-center md:w-max absolute top-1/2 right-1/2 translate-x-[50%] translate-y-[-50%]'
+    class='hero-content text-center md:w-max absolute top-1/2 right-1/2 translate-x-[50%] translate-y-[-50%] w-11/12'
   >
-    <h2 class='inline text-4xl font-bold'>
+    <h2 class='inline text-4xl font-bold leading-snug'>
       Hello <span
-        class='relative bottom-1 right-1 md:text-4xl text-2xl inline-block animate-wave origin-[70%_70%]'
+        class='relative bottom-1 right-1 md:text-5xl text-4xl inline-block animate-wave origin-[70%_70%]'
         >👋</span
       >, I'm <i>{name.firstname} {name.lastname}</i> and I'm
-      <span class='text-blue-400'>
+      <span class='text-[#8696FE]'>
         <TypeWritter
           client:load
           sentences={[
