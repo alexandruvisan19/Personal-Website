@@ -12,6 +12,10 @@ export default function Navigation({ currentPath }) {
   const { isMenuVisible } = useStore($header);
   const pages = [
     {
+      name: 'Portfolio',
+      path: '/portfolio',
+    },
+    {
       name: 'About',
       path: '/about',
     },
