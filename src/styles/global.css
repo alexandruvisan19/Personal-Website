@@ -31,3 +31,11 @@
 * {
   box-sizing: border-box;
 }
+
+.item {
+  width: 88%;
+  overflow: visible;
+  stroke: #fff;
+  stroke-width: 2;
+  display: inline-block;
+}

@@ -29,14 +29,21 @@ export default function TypeWritter({ sentences, options }) {
     }
 
     const additionInterval = setInterval(() => {
-      if (index < sentences[currentSentenceIndex].length && !hasStartText) {
+      if (
+        index < sentences[currentSentenceIndex].length &&
+        !hasStartText
+      ) {
         setCurrentText(
-          prevText => prevText + sentences[currentSentenceIndex].charAt(index),
+          prevText =>
+            prevText + sentences[currentSentenceIndex].charAt(index),
         );
         index++;
       } else {
         clearInterval(additionInterval);
-        setTimeout(() => startCharacterSubtraction(index), pauseSpeed);
+        setTimeout(
+          () => startCharacterSubtraction(index),
+          pauseSpeed,
+        );
         setHasStartText(false);
       }
     }, writeSpeed);
@@ -75,7 +82,10 @@ export default function TypeWritter({ sentences, options }) {
 
   useEffect(() => {
     const caretInterval = setInterval(() => {
-      if (currentSentenceIndex === sentences.length - 1 && isInfinite) {
+      if (
+        currentSentenceIndex === sentences.length - 1 &&
+        isInfinite
+      ) {
         setVisibleCaret(false);
         return;
       }
@@ -90,12 +100,14 @@ export default function TypeWritter({ sentences, options }) {
 
   return (
     <>
-      <p>
-        {hasStartText ? sentences[0] : currentText}
+      <p className='text-5xl mt-6'>
+        <i>{hasStartText ? sentences[0] : currentText}</i>
         {visibleCaret ? (
           <span>|</span>
         ) : (
-          <span className='inline-block w-0 sm:ml-3 ml-0'>&nbsp;</span>
+          <span className='inline-block w-0 sm:ml-3 ml-0'>
+            &nbsp;
+          </span>
         )}
       </p>
     </>

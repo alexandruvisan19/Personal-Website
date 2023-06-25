@@ -16,19 +16,19 @@ const { pageTitle } = Astro.props;
     <title>{pageTitle}</title>
     <style>
       #main::before {
-        mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 90%);
+        mask-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent 70%);
       }
     </style>
   </head>
-  <body
-    id='main'
-    class='dark:text-white text-black font-montserrat overflow-x-hidden relative before:content-[""] before:absolute before:z-[-1] before:top-[0%] before:bottom-[0%] before:left-[0%] before:bg-heroPattern before:bg-repeat before:bg-blend-overlay before:w-[100%] before:animate-color'
-  >
+  <body class='dark:text-white text-black font-montserrat'>
     <div
       class='m-auto w-ch max-w-full p-0 leading-normal flex flex-col min-h-screen'
     >
       <Header />
-      <main class='flex-grow'>
+      <main
+        id='main'
+        class='flex-grow overflow-x-hidden relative before:content-[""] before:absolute before:z-[-1] before:top-[0%] before:bottom-[0%] before:left-[0%] before:bg-heroPattern before:bg-repeat before:bg-blend-overlay before:w-[100%] before:animate-backgroundColor'
+      >
         <slot />
       </main>
 

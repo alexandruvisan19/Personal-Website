@@ -2,6 +2,7 @@ import { useStore } from '@nanostores/preact';
 import { $header } from '../store/headerStore';
 import TypeWritter from './TypeWritter';
 import { person } from '../data';
+import Logo from '../assets/Logo';
 
 const {
   name: { firstname, lastname },
@@ -43,7 +44,8 @@ export default function Navigation({ currentPath }) {
         href='/'
         class='font-carter sm:text-3xl text-5xl text-black dark:text-white hover:text-blue-700'
       >
-        <TypeWritter
+        <Logo />
+        {/* <TypeWritter
           sentences={[`${firstname} ${lastname}.`, initials]}
           options={{
             writeSpeed: 80,
@@ -53,7 +55,7 @@ export default function Navigation({ currentPath }) {
             isInfinite: true,
             startText: true,
           }}
-        />
+        /> */}
       </a>
 
       <ul
