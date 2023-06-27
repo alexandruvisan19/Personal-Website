@@ -57,7 +57,7 @@ export default {
         montserratItalic: ['Montserrat Italic', 'sans-serif'],
       },
       backgroundImage: {
-        heroPattern: "url('noise.webp')",
+        heroPattern: "url('/images/noise.webp')",
       },
     },
   },
