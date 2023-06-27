@@ -1,13 +1,6 @@
 import { useStore } from '@nanostores/preact';
 import { $header } from '../store/headerStore';
-import TypeWritter from './TypeWritter';
-import { person } from '../data';
 import Logo from '../assets/Logo';
-
-const {
-  name: { firstname, lastname },
-  initials,
-} = person;
 
 export default function Navigation({ currentPath }) {
   const { isMenuVisible } = useStore($header);

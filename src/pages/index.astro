@@ -5,7 +5,8 @@ import Modal from '../components/Modal';
 
 const pageTitle = 'Home Page';
 
-import { person } from '../data';
+import { person, social } from '../data';
+const { linkedin, github } = social;
 const { name } = person;
 ---
 
@@ -15,7 +16,7 @@ const { name } = person;
   >
     <h2 class='inline text-4xl font-bold'>
       Hey there! <span
-        class='relative bottom-1 right-1 md:text-5xl text-4xl inline-block animate-wave origin-[70%_70%]'
+        class='relative bottom-1 right-1 text-5xl inline-block animate-wave origin-[70%_70%]'
         >👋</span
       >, I'm {name.firstname} and I'm
       <span>
@@ -41,9 +42,18 @@ const { name } = person;
     </h2>
     <button
       id='contactBtn'
-      class='btn btn-info mt-8 bg-heroPattern drop-shadow-xl hover:bg-slate-50'
+      class='btn btn-info mt-6 bg-heroPattern drop-shadow-xl hover:bg-slate-50'
       >Contact me</button
     >
+    <div class='flex justify-center mt-6'>
+      <a href={linkedin.link}
+        ><span class='i-mdi-linkedin text-4xl ml-2 mr-2'
+        ></span></a
+      >
+      <a href={github.link}
+        ><span class='i-mdi-github text-4xl ml-2 mr-2'></span></a
+      >
+    </div>
   </div>
   <Modal client:load>
     <h3 class='font-bold text-4xl mb-4'>Contact me</h3>

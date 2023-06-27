@@ -16,6 +16,12 @@ dependencies:
   '@egoist/tailwindcss-icons':
     specifier: ^1.1.0
     version: 1.1.0(tailwindcss@3.3.2)
+  '@iconify-json/devicon':
+    specifier: ^1.1.11
+    version: 1.1.11
+  '@iconify-json/logos':
+    specifier: ^1.1.33
+    version: 1.1.33
   '@iconify-json/mdi':
     specifier: ^1.1.52
     version: 1.1.52
@@ -702,6 +708,18 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@iconify-json/devicon@1.1.11:
+    resolution: {integrity: sha512-sANBgzknZFHm9aasT7h3KkGUkVVAPKbevoii1S59youS/UWTzFtiWU9Fxmz2nE3yBu4LI7yB4jynUd+fNSxnJg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify-json/logos@1.1.33:
+    resolution: {integrity: sha512-XHnob/dyib1oCaHZV0yRLXUfGQAr46pTuO/Y+jx9ImVBVb5jyZfJ+PLgro5pp8fyQkXWV2vq7pdR0yP5s4gcvg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
 
   /@iconify-json/mdi@1.1.52:
     resolution: {integrity: sha512-tLzpFcmoGw1/jHcl+BshUd4bqvP4755OUluaARsuKskTp2aIPIAkRQOhzJGpry9CZ0i82z0alq4HrKrp9uvj4A==}
