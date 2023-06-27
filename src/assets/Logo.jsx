@@ -14,8 +14,8 @@ export default function Logo() {
 
   return (
     <motion.svg
-      width='235'
-      height='50'
+      width='185'
+      height='40'
       viewBox='0 0 376.7 81'
       xmlns='http://www.w3.org/2000/svg'
       className='item'>

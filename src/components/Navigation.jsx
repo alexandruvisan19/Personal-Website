@@ -45,17 +45,6 @@ export default function Navigation({ currentPath }) {
         class='font-carter sm:text-3xl text-5xl text-black dark:text-white hover:text-blue-700'
       >
         <Logo />
-        {/* <TypeWritter
-          sentences={[`${firstname} ${lastname}.`, initials]}
-          options={{
-            writeSpeed: 80,
-            deleteSpeed: 150,
-            pauseSpeed: 1000,
-            caretSpeed: 500,
-            isInfinite: true,
-            startText: true,
-          }}
-        /> */}
       </a>
 
       <ul
