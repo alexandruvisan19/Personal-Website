@@ -12,7 +12,7 @@ export default function Modal({ children }) {
       <dialog id='my_modal_1' className='modal' ref={closeRef}>
         <form
           className='modal-box'
-          action='https://formsubmit.co/alexandruvisan1908@gmail.com'
+          action='https://formsubmit.co/019c6aa344dc85907f6dc9a99ac9e911'
           method='POST'>
           <button
             onClick={closeModal}
