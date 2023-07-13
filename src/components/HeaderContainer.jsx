@@ -10,7 +10,7 @@ export default function HeaderContainer({ children }) {
         isMenuVisible
           ? 'absolute top-0 right-0 dark:bg-[#1D267D] bg-[#B0DAFF] dark:text-white text-black h-screen w-full z-10'
           : ''
-      } pt-2 pb-2`}>
+      } pt-4 pb-4`}>
       {children}
     </header>
   );

@@ -7,7 +7,7 @@ import '../styles/global.css';
 const { pageTitle } = Astro.props;
 ---
 
-<html lang='en'>
+<html lang='en' class='text-white'>
   <head>
     <meta charset='utf-8' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
@@ -21,16 +21,20 @@ const { pageTitle } = Astro.props;
           transparent 70%
         );
       }
+      html.dark {
+        background-color: white;
+        color: black;
+      }
     </style>
   </head>
-  <body class='dark:text-white text-black font-montserrat'>
+  <body class='font-montserrat'>
     <div
       class='m-auto w-ch max-w-full p-0 leading-normal flex flex-col min-h-screen overflow-x-hidden'
     >
       <Header />
       <main
         id='main'
-        class='flex-grow relative before:content-[""] before:absolute before:z-[-1] before:top-[0%] before:bottom-[10%] before:left-[-25%] before:bg-heroPattern before:bg-repeat before:bg-blend-overlay before:w-[150%] before:animate-backgroundColor'
+        class='flex-grow relative before:bg-heroPattern before:content-[""] before:absolute before:z-[-1] before:top-[0%] before:bottom-[10%] before:left-[-25%] before:bg-repeat before:bg-blend-overlay before:w-[150%] before:animate-backgroundColor'
       >
         <slot />
       </main>

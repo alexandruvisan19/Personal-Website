@@ -12,7 +12,8 @@
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+  src: url('/fonts/Montserrat-VariableFont_wght.ttf')
+    format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -20,7 +21,8 @@
 
 @font-face {
   font-family: 'Montserrat Italic';
-  src: url('/fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+  src: url('/fonts/Montserrat-Italic-VariableFont_wght.ttf')
+    format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -33,7 +35,7 @@
 .item {
   width: 88%;
   overflow: visible;
-  stroke: #fff;
+  stroke: #000;
   stroke-width: 2;
   display: inline-block;
 }

@@ -45,7 +45,7 @@ export default function Hamburger() {
         <div
           onClick={clickHandler}
           id='hamburger'
-          className='sm:hidden inline-block cursor-pointer [&>*]:block [&>*]:w-8 [&>*]:h-[4px] [&>*]:rounded-md [&>*]:bg-black [&>*]:dark:bg-white [&>*]:focus:outline-none'>
+          className='sm:hidden inline-block cursor-pointer [&>*]:block [&>*]:w-8 [&>*]:h-[4px] [&>*]:rounded-md [&>*]:bg-white [&>*]:dark:bg-black [&>*]:focus:outline-none'>
           <span className='mb-[5px]'></span>
           <span className='mb-[5px]'></span>
           <span></span>

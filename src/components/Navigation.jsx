@@ -6,21 +6,21 @@ export default function Navigation({ currentPath }) {
   const { isMenuVisible } = useStore($header);
   const pages = [
     {
-      name: 'Portfolio',
-      path: '/portfolio',
-    },
-    {
       name: 'About',
       path: '/about',
     },
-    {
-      name: 'Blog',
-      path: '/blog',
-    },
-    {
-      name: 'Tags',
-      path: '/tags',
-    },
+    // {
+    //   name: 'Portfolio',
+    //   path: '/portfolio',
+    // },
+    // {
+    //   name: 'Blog',
+    //   path: '/blog',
+    // },
+    // {
+    //   name: 'Tags',
+    //   path: '/tags',
+    // },
   ];
 
   const mobileMenuStylesParent =
@@ -31,20 +31,17 @@ export default function Navigation({ currentPath }) {
     <div
       class={`xl:pr-0 xl:pl-0 pr-4 pl-4 sm:flex items-center sm:justify-between w-full ${
         !isMenuVisible ? 'hidden' : mobileMenuStylesParent
-      }`}
-    >
+      }`}>
       <a
         href='/'
-        class='font-carter sm:text-3xl text-5xl text-black dark:text-white hover:text-blue-700'
-      >
-        <Logo />
+        class='font-carter sm:text-3xl text-5xl dark:text-black text-white hover:text-blue-700'>
+        AV.
       </a>
 
       <ul
         class={`flex text-center ${
           !isMenuVisible ? '' : mobileMenuStylesChildren
-        }`}
-      >
+        }`}>
         {pages.map(page => (
           <li class='sm:pt-0 pt-8 pr-4 pl-4'>
             <a
@@ -53,8 +50,7 @@ export default function Navigation({ currentPath }) {
                   ? 'underline underline-offset-4 decoration-wavy'
                   : ''
               } sm:text-xl text-2xl`}
-              href={page.path}
-            >
+              href={page.path}>
               {page.name}
             </a>
           </li>
