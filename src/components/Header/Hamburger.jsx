@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import { useStore } from '@nanostores/preact';
-import { $header } from '../store/headerStore';
+import { $header } from '../../store/headerStore';
 
 export default function Hamburger() {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
@@ -45,7 +45,7 @@ export default function Hamburger() {
         <div
           onClick={clickHandler}
           id='hamburger'
-          className='sm:hidden inline-block cursor-pointer [&>*]:block [&>*]:w-8 [&>*]:h-[4px] [&>*]:rounded-md [&>*]:bg-white [&>*]:dark:bg-black [&>*]:focus:outline-none'>
+          className='sm:hidden inline-block cursor-pointer [&>*]:block [&>*]:w-8 [&>*]:h-[4px] [&>*]:rounded-md [&>*]:bg-white [&>*]:dark:bg-white [&>*]:focus:outline-none'>
           <span className='mb-[5px]'></span>
           <span className='mb-[5px]'></span>
           <span></span>
@@ -54,7 +54,7 @@ export default function Hamburger() {
         <button
           onClick={clickHandler}
           type='button'
-          class='md:hidden dark:text-white focus:outline-none'>
+          class='md:hidden dark:text-white text-white focus:outline-none'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             class='h-[32px] w-8'

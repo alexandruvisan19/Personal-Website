@@ -1,40 +1,26 @@
 ---
 import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import Header from '../components/Header/index.astro';
 
 import '../styles/global.css';
 
 const { pageTitle } = Astro.props;
 ---
 
-<html lang='en' class='text-white'>
+<html lang='en' class='bg-[#faf0f0]'>
   <head>
     <meta charset='utf-8' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
     <title>{pageTitle}</title>
-    <style>
-      #main::before {
-        mask-image: radial-gradient(
-          rgba(0, 0, 0, 0.9),
-          transparent 70%
-        );
-      }
-      html.dark {
-        background-color: white;
-        color: black;
-      }
-    </style>
   </head>
-  <body class='font-montserrat'>
-    <div
-      class='m-auto w-ch max-w-full p-0 leading-normal flex flex-col min-h-screen overflow-x-hidden'
-    >
+  <body class='font-montserrat dark:bg-[#17191e] duration-700'>
+    <div class='flex flex-col min-h-screen overflow-x-hidden'>
       <Header />
+
       <main
-        id='main'
-        class='flex-grow relative before:bg-heroPattern before:content-[""] before:absolute before:z-[-1] before:top-[0%] before:bottom-[10%] before:left-[-25%] before:bg-repeat before:bg-blend-overlay before:w-[150%] before:animate-backgroundColor'
+        class='flex flex-1 flex-col z-10 isolate max-w-7xl mx-auto w-full'
       >
         <slot />
       </main>

@@ -14,11 +14,14 @@ if (
 ---
 
 <HeaderContainer client:load>
-  <nav class='sm:flex sm:flex-row-reverse items-center'>
-    <div class='flex justify-between items-center pr-4 pl-4 relative z-10'>
+  <nav class='sm:flex sm:flex-row-reverse items-center max-w-7xl mx-auto'>
+    <div
+      class='flex justify-between items-center pr-4 pl-4 relative z-10'
+    >
       <Hamburger client:load />
       <ThemeIcon />
     </div>
     <Navigation client:load currentPath={currentPath} />
   </nav>
 </HeaderContainer>
+<div class='divider'></div>

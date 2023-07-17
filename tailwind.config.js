@@ -35,12 +35,12 @@ export default {
           '100%': { backgroundColor: '#9336B4' },
         },
         textColor: {
-          '0%': { color: '#0A6EBD' },
-          '20%': { color: '#9336B4' },
-          '40%': { color: '#4942E4' },
-          '60%': { color: '#1F6E8C' },
-          '80%': { color: '#9336B4' },
-          '100%': { color: '#0A6EBD' },
+          '0%': { color: '#9336B4' },
+          '20%': { color: '#0A6EBD' },
+          '40%': { color: '#1F6E8C' },
+          '60%': { color: '#4942E4' },
+          '80%': { color: '#116D6E' },
+          '100%': { color: '#9336B4' },
         },
         gradientAnimation: {
           '0%': {
@@ -57,7 +57,7 @@ export default {
         montserratItalic: ['Montserrat Italic', 'sans-serif'],
       },
       backgroundImage: {
-        heroPattern: "url('/images/noise.webp')",
+        noisePattern: "url('/images/noise.webp')",
       },
     },
   },

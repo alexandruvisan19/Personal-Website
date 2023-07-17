@@ -31,16 +31,16 @@ if (cookie?.value) {
     background: none;
   }
   .sun {
-    fill: white;
+    fill: transparent;
   }
   .moon {
-    fill: transparent;
+    fill: rgb(0, 47, 255); 
   }
   :global(.dark) .sun {
-    fill: transparent;
+    fill: rgb(255, 238, 0);
   }
   :global(.dark) .moon {
-    fill: black;
+    fill: transparent;
   }
 </style>
 
@@ -50,13 +50,16 @@ const theme = (() => {
     const cookie = document.cookie
       .split('; ')
       .find(row => row.startsWith('theme='));
+
     if (cookie) {
       return cookie.split('=')[1];
     }
   }
+
   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     return 'dark';
   }
+
   return 'light';
 })();
 
@@ -74,7 +77,7 @@ const handleToggleClick = () => {
   document.cookie = `theme=${isDark ? 'dark' : 'light'}; path=/`;
 };
 
-  document
-    .getElementById('themeToggle')
-    ?.addEventListener('click', handleToggleClick);
+document
+  .getElementById('themeToggle')
+  ?.addEventListener('click', handleToggleClick);
 </script>

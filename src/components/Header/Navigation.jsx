@@ -1,6 +1,5 @@
 import { useStore } from '@nanostores/preact';
-import { $header } from '../store/headerStore';
-import Logo from '../assets/Logo';
+import { $header } from '../../store/headerStore';
 
 export default function Navigation({ currentPath }) {
   const { isMenuVisible } = useStore($header);
@@ -34,7 +33,7 @@ export default function Navigation({ currentPath }) {
       }`}>
       <a
         href='/'
-        class='font-carter sm:text-3xl text-5xl dark:text-black text-white hover:text-blue-700'>
+        class='font-carter sm:text-4xl text-5xl dark:text-white animate-textColor'>
         AV.
       </a>
 
@@ -49,7 +48,7 @@ export default function Navigation({ currentPath }) {
                 currentPath === page.path
                   ? 'underline underline-offset-4 decoration-wavy'
                   : ''
-              } sm:text-xl text-2xl`}
+              } sm:text-xl text-2xl dark:text-white animate-textColor font-semibold`}
               href={page.path}>
               {page.name}
             </a>
