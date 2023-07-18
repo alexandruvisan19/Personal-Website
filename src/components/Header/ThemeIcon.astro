@@ -1,5 +1,5 @@
 ---
-let theme = 'light';
+let theme = 'dark';
 const cookie = Astro.cookies.get('theme');
 if (cookie?.value) {
   theme = cookie.value;
@@ -45,30 +45,6 @@ if (cookie?.value) {
 </style>
 
 <script is:inline>
-const theme = (() => {
-  if (typeof document !== 'undefined') {
-    const cookie = document.cookie
-      .split('; ')
-      .find(row => row.startsWith('theme='));
-
-    if (cookie) {
-      return cookie.split('=')[1];
-    }
-  }
-
-  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    return 'dark';
-  }
-
-  return 'light';
-})();
-
-if (theme === 'light') {
-  document.documentElement.classList.remove('dark');
-} else {
-  document.documentElement.classList.add('dark');
-}
-
 const handleToggleClick = () => {
   const element = document.documentElement;
   element.classList.toggle('dark');

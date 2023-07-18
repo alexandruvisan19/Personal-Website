@@ -33,7 +33,7 @@ export default function Navigation({ currentPath }) {
       }`}>
       <a
         href='/'
-        class='font-carter sm:text-4xl text-5xl dark:text-white animate-textColor'>
+        class='sm:text-4xl text-5xl dark:text-white animate-textColor'>
         AV.
       </a>
 

@@ -51,11 +51,6 @@ export default {
           },
         },
       },
-      fontFamily: {
-        carter: ['Carter One', 'sans-serif'],
-        montserrat: ['Montserrat', 'sans-serif'],
-        montserratItalic: ['Montserrat Italic', 'sans-serif'],
-      },
       backgroundImage: {
         noisePattern: "url('/images/noise.webp')",
       },
