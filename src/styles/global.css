@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    font-family: Montserrat, system-ui, sans-serif;
-  }
-}
-
 @layer components {
   .noise {
     z-index: -20;
@@ -34,40 +28,6 @@
   }
 }
 
-@font-face {
-  font-family: 'Carter One';
-  src: url('/fonts/CarterOne-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('/fonts/Montserrat-VariableFont_wght.ttf')
-    format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat Italic';
-  src: url('/fonts/Montserrat-VariableFont_wght.ttf')
-    format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 * {
   box-sizing: border-box;
-}
-
-.item {
-  width: 88%;
-  overflow: visible;
-  stroke: #000;
-  stroke-width: 2;
-  display: inline-block;
 }
