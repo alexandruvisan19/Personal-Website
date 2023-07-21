@@ -10,7 +10,7 @@ export default function HeaderContainer({ children }) {
       <header
         className={`${
           isMenuVisible
-            ? 'absolute top-0 right-0 dark:bg-[#807cd4] bg-[#0003c4] dark:text-white text-black h-screen w-full z-10 bg-heroPattern'
+            ? 'relative top-0 right-0 bg-opacity-80 dark:bg-[#17191e] bg-[#d3d3d3] dark:text-white text-black h-screen w-full z-10'
             : ''
         } pt-4 sm:pr-6 sm:pl-6`}>
         {children}

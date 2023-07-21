@@ -14,7 +14,33 @@ const { pageTitle } = Astro.props;
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
     <title>{pageTitle}</title>
-    <script src='../scripts/theme.js'></script>
+    <script is:inline>
+      const theme = (() => {
+        if (typeof document !== 'undefined') {
+          const cookie = document.cookie
+            .split('; ')
+            .find(row => row.startsWith('theme='));
+
+          if (cookie) {
+            return cookie.split('=')[1];
+          }
+        }
+
+        if (
+          window.matchMedia('(prefers-color-scheme: dark)').matches
+        ) {
+          return 'dark';
+        }
+
+        return 'light';
+      })();
+
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
   </head>
   <body class='dark:bg-[#17191e] bg-[#faf0f0] duration-700'>
     <div class='flex flex-col min-h-screen overflow-x-hidden'>

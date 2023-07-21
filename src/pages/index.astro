@@ -13,12 +13,14 @@ const { name } = person;
 <BaseLayout pageTitle={pageTitle}>
   <section
     id='first-section'
-    class='text-black dark:text-white flex-grow relative before:main-noise before:animate-backgroundColor flex items-center justify-center duration-700'
+    class='text-black dark:text-white p-4 flex-grow relative before:main-noise before:animate-backgroundColor flex items-center justify-center duration-700'
   >
     <div class='text-center'>
-      <h2 class='inline text-6xl font-bold drop-shadow-xl'>
+      <h2
+        class='inline font-bold drop-shadow-xl text-5xl leading-tight md:text-6xl'
+      >
         Hey there! <span
-          class='relative bottom-1 right-1 text-7xl inline-block animate-wave origin-[70%_70%]'
+          class='relative bottom-1 right-1 text-5xl md:text-7xl inline-block animate-wave origin-[70%_70%]'
           >👋</span
         >, I'm {name.firstname} and I'm
         <span>

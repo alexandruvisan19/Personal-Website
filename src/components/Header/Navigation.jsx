@@ -23,7 +23,7 @@ export default function Navigation({ currentPath }) {
   ];
 
   const mobileMenuStylesParent =
-    'flex absolute left-0 right-0 top-0 bottom-0 flex-col justify-center';
+    'flex absolute left-0 right-0 top-0 bottom-0 flex-col justify-center z-20';
   const mobileMenuStylesChildren = 'flex-col justify-center';
 
   return (
@@ -48,7 +48,7 @@ export default function Navigation({ currentPath }) {
                 currentPath === page.path
                   ? 'underline underline-offset-4 decoration-wavy'
                   : ''
-              } sm:text-xl text-2xl dark:text-white animate-textColor font-semibold`}
+              } sm:text-xl text-4xl dark:text-white animate-textColor font-semibold`}
               href={page.path}>
               {page.name}
             </a>

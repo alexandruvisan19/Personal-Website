@@ -100,7 +100,7 @@ export default function TypeWritter({ sentences, options }) {
 
   return (
     <>
-      <p className='text-5xl mt-4'>
+      <p className='text-5xl leading-tight mt-3 mb-3'>
         <i>{hasStartText ? sentences[0] : currentText}</i>
         {visibleCaret ? (
           <span>|</span>

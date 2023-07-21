@@ -14,7 +14,14 @@ const identity = {
 const { firstName, country, occupation, hobbies } = identity;
 const [hobbyNumberOne, hobbyNumberTwo] = hobbies;
 
-const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Astro', 'Writing Docs'];
+const skills = [
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'React',
+  'Astro',
+  'Writing Docs',
+];
 
 const happy = true;
 const finished = true;
@@ -22,7 +29,7 @@ const goal = 3;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div>
+  <div class='dark:text-white text-black'>
     <h1>About page</h1>
     <p>Here are a few facts about me:</p>
     <ul>
@@ -31,7 +38,8 @@ const goal = 3;
       {
         hobbies.length >= 2 && (
           <li>
-            Two of my hobbies are: {hobbyNumberOne} and {hobbyNumberTwo}
+            Two of my hobbies are: {hobbyNumberOne} and{' '}
+            {hobbyNumberTwo}
           </li>
         )
       }
