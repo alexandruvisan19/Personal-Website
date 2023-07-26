@@ -107,7 +107,7 @@ function SliderComponent() {
       </h3>
       <Slider {...settings} className='text-center'>
         {skills.map(skill => (
-          <div>
+          <div key={skill.name}>
             <span className='text-[0.7rem] font-bold relative bottom-2'>
               {skill.name}
             </span>

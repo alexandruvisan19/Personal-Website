@@ -31,3 +31,7 @@
 * {
   box-sizing: border-box;
 }
+
+p {
+  padding: 0.5rem 0;
+}

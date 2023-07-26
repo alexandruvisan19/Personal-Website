@@ -28,21 +28,21 @@ export default function Navigation({ currentPath }) {
 
   return (
     <div
-      class={`xl:pr-0 xl:pl-0 pr-4 pl-4 sm:flex items-center sm:justify-between w-full ${
+      className={`xl:pr-0 xl:pl-0 pr-4 pl-4 sm:flex items-center sm:justify-between w-full ${
         !isMenuVisible ? 'hidden' : mobileMenuStylesParent
       }`}>
       <a
         href='/'
-        class='sm:text-4xl text-5xl dark:text-white animate-textColor'>
+        className='sm:text-4xl text-5xl dark:text-white animate-textColor'>
         AV.
       </a>
 
       <ul
-        class={`flex text-center ${
+        className={`flex text-center ${
           !isMenuVisible ? '' : mobileMenuStylesChildren
         }`}>
-        {pages.map(page => (
-          <li class='sm:pt-0 pt-8 pr-4 pl-4'>
+        {pages.map((page, i) => (
+          <li key={`${page}-${i}`} className='sm:pt-0 pt-8 pr-4 pl-4'>
             <a
               className={`${
                 currentPath === page.path
