@@ -1,6 +1,5 @@
-import { h } from 'preact';
-import { useEffect, useState } from 'preact/hooks';
-import { useStore } from '@nanostores/preact';
+import { useEffect, useState } from 'react';
+import { useStore } from '@nanostores/react';
 import { $header } from '../../store/headerStore';
 
 export default function Hamburger() {

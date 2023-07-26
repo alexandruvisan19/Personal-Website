@@ -1,4 +1,5 @@
 ---
+import Slider from '../components/Slider';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 import '../styles/global.css';
@@ -9,56 +10,50 @@ const identity = {
   firstName: 'Alex',
   country: 'Romania',
   occupation: 'Frontend Engineer',
-  hobbies: ['travelling', 'eating', 'cats'],
+  hobbies: ['travel', 'read'],
 };
 const { firstName, country, occupation, hobbies } = identity;
 const [hobbyNumberOne, hobbyNumberTwo] = hobbies;
-
-const skills = [
-  'HTML',
-  'CSS',
-  'JavaScript',
-  'React',
-  'Astro',
-  'Writing Docs',
-];
-
-const happy = true;
-const finished = true;
-const goal = 3;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class='dark:text-white text-black'>
-    <h1>About page</h1>
-    <p>Here are a few facts about me:</p>
-    <ul>
-      <li>My name is {firstName}.</li>
-      <li>I live in {country} and I work as a {occupation}.</li>
-      {
-        hobbies.length >= 2 && (
-          <li>
-            Two of my hobbies are: {hobbyNumberOne} and{' '}
-            {hobbyNumberTwo}
-          </li>
-        )
-      }
-    </ul>
-    <p>My skills are:</p>
-    <ul>
-      {skills.map(skill => <li class='skill'>{skill}</li>)}
-    </ul>
+  <h1 class='text-center text-4xl font-semibold'>About me</h1>
+  <div class='block justify-around items-center md:flex'>
+    <div class='md:w-[35rem] w-full p-8 md:m-[0 auto] m-auto'>
+      <img
+        class='rounded-xl shadow-2xl'
+        src='/src/assets/20210519193557_IMG_0927.JPG'
+        alt='Alex Visan'
+      />
+    </div>
 
-    {happy && <p>I am happy to be learning Astro!</p>}
-
-    {finished && <p>I finished this tutorial!</p>}
-
-    {
-      goal === 3 ? (
-        <p>My goal is to finish in 3 days.</p>
-      ) : (
-        <p>My goal is not 3 days.</p>
-      )
-    }
+    <div class='p-10'>
+      <ul>
+        <li>My name is {firstName}.</li>
+        <li>
+          I live in {country} and I work as a {occupation}, working on
+          web projects and creating beautiful user interfaces. I
+          strive to create an intuitive and enjoyable experience for
+          users, while also keeping the code clean and organized.
+        </li>
+        <li>
+          I've been working in the software industry for over 5 years
+          starting as a Quality Assurance, gaining experience while
+          learning the basics of user experience as an Email Marketer,
+          and finally finding my stride as a Software Engineer.
+        </li>
+        <li>
+          While over these years I have gained a lot of experience in
+          both testing code and front-end, my passion lies in the
+          front-end using new technologies and frameworks to create
+          interactive websites.
+        </li>
+        <li>
+          When I'm not coding, I like to: {hobbyNumberOne} and{' '}
+          {hobbyNumberTwo}
+        </li>
+      </ul>
+    </div>
   </div>
+  <Slider client:load />
 </BaseLayout>

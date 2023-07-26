@@ -1,4 +1,4 @@
-import { useStore } from '@nanostores/preact';
+import { useStore } from '@nanostores/react';
 import { $header } from '../../store/headerStore';
 
 export default function Navigation({ currentPath }) {

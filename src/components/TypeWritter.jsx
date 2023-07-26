@@ -1,5 +1,4 @@
-import { h } from 'preact';
-import { useState, useEffect } from 'preact/hooks';
+import { useState, useEffect } from 'react';
 
 export default function TypeWritter({ sentences, options }) {
   const [currentText, setCurrentText] = useState('');
@@ -22,6 +21,7 @@ export default function TypeWritter({ sentences, options }) {
 
   const startTypingEffect = () => {
     let index = 0;
+    setCurrentText(sentences[currentSentenceIndex].charAt(0));
 
     if (hasStartText) {
       index = sentences[currentSentenceIndex].length - 1;
@@ -33,10 +33,11 @@ export default function TypeWritter({ sentences, options }) {
         index < sentences[currentSentenceIndex].length &&
         !hasStartText
       ) {
-        setCurrentText(
-          prevText =>
-            prevText + sentences[currentSentenceIndex].charAt(index),
-        );
+        setCurrentText(prevText => {
+          return (
+            prevText + sentences[currentSentenceIndex].charAt(index)
+          );
+        });
         index++;
       } else {
         clearInterval(additionInterval);
