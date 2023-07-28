@@ -17,12 +17,12 @@ const { name } = person;
   >
     <div class='text-center'>
       <h2
-        class='inline font-bold drop-shadow-xl text-5xl leading-tight md:text-6xl'
+        class='inline font-bold drop-shadow-xl leading-tight md:text-6xl text-4xl'
       >
-        Hey there! <span
+        Hey there!<span
           class='relative bottom-1 right-1 text-5xl md:text-7xl inline-block animate-wave origin-[70%_70%]'
           >👋</span
-        >, I'm {name.firstname} and I'm
+        >I'm {name.firstname} and I'm
         <span>
           <TypeWritter
             client:load
@@ -41,24 +41,29 @@ const { name } = person;
               isInfinite: false,
               startText: false,
             }}
-          /></span
-        >
+          />
+        </span>
       </h2>
-      <button
-        id='contactBtn'
-        class='btn btn-info mt-6 bg-noisePattern drop-shadow-xl hover:bg-slate-50 text-black font-extrabold text-lg'
-        >Contact me</button
-      >
-      <div class='flex justify-center mt-6'>
-        <a href={linkedin.link}
-          ><span class='i-mdi-linkedin text-4xl ml-2 mr-2'></span></a
+
+      <div class="mt-6">
+        <button
+          id='contactBtn'
+          class='btn btn-info mt-6 bg-noisePattern drop-shadow-xl hover:bg-slate-50 text-black font-extrabold md:text-lg text-md'
+          >Contact me</button
         >
-        <a href={github.link}
-          ><span class='i-mdi-github text-4xl ml-2 mr-2'></span></a
-        >
+        <div class='flex justify-center mt-6'>
+          <a href={linkedin.link}
+            ><span class='i-mdi-linkedin text-4xl ml-2 mr-2'
+            ></span></a
+          >
+          <a href={github.link}
+            ><span class='i-mdi-github text-4xl ml-2 mr-2'></span></a
+          >
+        </div>
       </div>
     </div>
   </section>
+
   <Modal client:load>
     <h3 class='font-bold text-4xl mb-4'>Contact me</h3>
     <p class='py-4 text-xl mb-4'>

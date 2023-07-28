@@ -101,12 +101,14 @@ export default function TypeWritter({ sentences, options }) {
 
   return (
     <>
-      <p className='text-5xl leading-tight mt-3 mb-3'>
-        <i>{hasStartText ? sentences[0] : currentText}</i>
+      <p className='md:text-5xl text-3xl leading-tight mb-3 relative h-4 pb-10'>
+        <i className=' h-4 py-10'>
+          {hasStartText ? sentences[0] : currentText}
+        </i>
         {visibleCaret ? (
-          <span>|</span>
+          <span className='absolute'>|</span>
         ) : (
-          <span className='inline-block w-0 sm:ml-3 ml-0'>
+          <span className='absolute inline-block w-0 sm:ml-3 ml-0'>
             &nbsp;
           </span>
         )}
