@@ -5,13 +5,13 @@ export default function Navigation({ currentPath }) {
   const { isMenuVisible } = useStore($header);
   const pages = [
     {
+      name: 'Resume',
+      path: '/resume',
+    },
+    {
       name: 'About',
       path: '/about',
     },
-    // {
-    //   name: 'Portfolio',
-    //   path: '/portfolio',
-    // },
     // {
     //   name: 'Blog',
     //   path: '/blog',

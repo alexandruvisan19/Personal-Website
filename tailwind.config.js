@@ -59,7 +59,12 @@ export default {
   plugins: [
     daisyui,
     iconsPlugin({
-      collections: getIconCollections(['mdi', 'logos', 'devicon']),
+      collections: getIconCollections([
+        'mdi',
+        'logos',
+        'simple-icons',
+        'bxl',
+      ]),
     }),
   ],
   darkMode: 'class',

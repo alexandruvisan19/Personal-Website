@@ -19,15 +19,18 @@ dependencies:
   '@emotion/css':
     specifier: ^11.11.2
     version: 11.11.2
-  '@iconify-json/devicon':
-    specifier: ^1.1.11
-    version: 1.1.11
+  '@iconify-json/bxl':
+    specifier: ^1.1.6
+    version: 1.1.6
   '@iconify-json/logos':
     specifier: ^1.1.33
     version: 1.1.33
   '@iconify-json/mdi':
     specifier: ^1.1.52
     version: 1.1.52
+  '@iconify-json/simple-icons':
+    specifier: ^1.1.62
+    version: 1.1.62
   '@iconify/react':
     specifier: ^4.1.1
     version: 4.1.1(react@18.2.0)
@@ -785,8 +788,8 @@ packages:
     dev: false
     optional: true
 
-  /@iconify-json/devicon@1.1.11:
-    resolution: {integrity: sha512-sANBgzknZFHm9aasT7h3KkGUkVVAPKbevoii1S59youS/UWTzFtiWU9Fxmz2nE3yBu4LI7yB4jynUd+fNSxnJg==}
+  /@iconify-json/bxl@1.1.6:
+    resolution: {integrity: sha512-XPGoPmHRL7O3XhdeVKKvW1VcdbvP6w+XmCZ8er90fNqjbgQYIHJaIa3VRfRgKqXGJSWg0VEH6/9AfvLmbgGfKg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: false
@@ -799,6 +802,12 @@ packages:
 
   /@iconify-json/mdi@1.1.52:
     resolution: {integrity: sha512-tLzpFcmoGw1/jHcl+BshUd4bqvP4755OUluaARsuKskTp2aIPIAkRQOhzJGpry9CZ0i82z0alq4HrKrp9uvj4A==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify-json/simple-icons@1.1.62:
+    resolution: {integrity: sha512-idHWbDrd9HKtZq9XBJyVN5+QCxJ+oO4BJeJtNNi9GfFSgoA2ig0LZt7adj9uZ/zzEX0i5OY37OpuotkeFRCWfg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: false
